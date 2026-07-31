@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plat Nomor Custom | Desain Sendiri, Pesan via WhatsApp</title>
+  <meta name="description" content="Buat plat nomor custom sesuai desainmu. Pilih warna, wilayah, dan tambahan frame/anti air. Pesan langsung via WhatsApp.">
+  <meta property="og:title" content="Plat Nomor Custom">
+  <meta property="og:description" content="Buat plat nomor custom sesuai desainmu, pesan langsung via WhatsApp.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 60%22><rect width=%22100%22 height=%2260%22 rx=%228%22 fill=%22%23FFC72C%22/><text x=%2250%22 y=%2240%22 font-family=%22Arial%22 font-weight=%22700%22 font-size=%2226%22 fill=%22%23101114%22 text-anchor=%22middle%22>B</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="eyebrow">Custom &middot; Legal &middot; Cepat</p>
+    <h1>Plat Nomor<br>Custom Kendaraan</h1>
+    <p class="hero-sub">Bisa desain sesuai keinginanmu &mdash; tinggal ketik, langsung kelihatan hasilnya.</p>
+
+    <div class="plate-preview" id="heroPlate" data-color="hitam" aria-hidden="true">
+      <span class="plate-bolt" aria-hidden="true"></span>
+      <span class="plate-text" id="heroPlateText">B 1234 ABC</span>
+      <span class="plate-bolt" aria-hidden="true"></span>
+    </div>
+
+    <button type="button" class="btn btn-whatsapp" id="heroCta">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.64 0-3.16-.47-4.45-1.28l-.32-.19-3.01.78.8-2.93-.2-.3A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.38-5.91c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41-.14-.01-.3-.01-.46-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg>
+      Konsultasi via WhatsApp
+    </button>
+  </div>
+</section>
+
+<section class="form" id="order-form">
+  <div class="form-inner">
+    <div class="form-fields">
+      <h2>Custom Plat Kamu</h2>
+      <p class="form-hint">Isi detail plat, lihat pratinjaunya langsung di samping.</p>
+
+      <div class="field">
+        <label for="plate">Nomor Plat</label>
+        <input type="text" id="plate" placeholder="B 1234 ABC" autocomplete="off">
+        <span class="field-error" id="plateError" role="alert" hidden>Nomor plat wajib diisi.</span>
+      </div>
+
+      <div class="field">
+        <label for="color">Warna</label>
+        <select id="color">
+          <option value="hitam">Hitam</option>
+          <option value="putih">Putih</option>
+          <option value="kuning">Kuning</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="region">Wilayah</label>
+        <select id="region">
+          <option>Jakarta</option>
+          <option>Bandung</option>
+          <option>Surabaya</option>
+        </select>
+      </div>
+
+      <fieldset class="addons">
+        <legend>Tambahan</legend>
+        <label class="checkbox"><input type="checkbox" id="frame"> Frame <span>(+Rp15.000)</span></label>
+        <label class="checkbox"><input type="checkbox" id="antiAir"> Anti Air <span>(+Rp10.000)</span></label>
+      </fieldset>
+
+      <div class="total-row">
+        <span>Total</span>
+        <span class="total-amount">Rp <span id="total" aria-live="polite">100000</span></span>
+      </div>
+
+      <button type="button" class="btn btn-whatsapp btn-block" id="orderBtn">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.32A9.94 9.94 0 0 0 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm0 18c-1.64 0-3.16-.47-4.45-1.28l-.32-.19-3.01.78.8-2.93-.2-.3A7.94 7.94 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8zm4.38-5.91c-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.01-.37-1.92-1.18-.71-.63-1.19-1.42-1.33-1.66-.14-.24-.01-.37.11-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41-.14-.01-.3-.01-.46-.01s-.42.06-.64.3c-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.71 2.61 4.14 3.66.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28z"/></svg>
+        Pesan Sekarang
+      </button>
+    </div>
+
+    <aside class="form-preview">
+      <p class="preview-label">Pratinjau</p>
+      <div class="plate-preview" id="formPlate" data-color="hitam">
+        <span class="plate-bolt" aria-hidden="true"></span>
+        <span class="plate-text" id="formPlateText">B 1234 ABC</span>
+        <span class="plate-bolt" aria-hidden="true"></span>
+      </div>
+      <p class="preview-note" id="previewRegion">Jakarta</p>
+    </aside>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Plat Nomor Custom. Pemesanan diproses manual via WhatsApp.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
